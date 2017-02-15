@@ -4,4 +4,19 @@ block vars
     -page='start_here'
 
 block body
-    h3 variables
+    h4 Open your Debugger:
+    p To open Chrome's debugger, press ⌘ + ⌥ + i
+    h4 Using the Console:
+    p In the debugger, go to the Console tab. From the Console tab, you can run your own JS. Try it by copy-paste-ing this snippet into the console.
+    pre.prettyprint.
+        image.src = 'http://i.giphy.com/4Z3DdOZRTcXPa.gif';
+    p Once you've done that, hit Enter, and this image should change:
+    p
+      img#image(src="http://i.giphy.com/3oD3YGIVrRGbe5YGNa.gif" style="width:200px;")
+    p We will be using the console, and the Sources tab to learn
+    
+    h4 Viewing results in the console
+    p From the Console, you can also see logs from things that are running on the page. For example, click this button:
+    script.
+        function logThing(){console.log('I logged a thing!');}
+    button(onclick="logThing()") Run

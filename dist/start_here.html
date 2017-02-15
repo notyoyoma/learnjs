@@ -5,21 +5,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.min.css" rel="stylesheet">
   <style>
     body{margin:2em;}
     .main{background: #eef;padding:1em;}
+    pre.prettyprint {border:0;background:#fff;}
   </style>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.umd.js"></script>
 </head>
 <body>
   <div class="container">
     <h1 style="display:inline-block;"><a href="./">LearnJS</a>
-    </h1><span> / Start here</span>
+    </h1><span> / Start here</span><a class="btn btn-outline-primary pull-xs-right" href="variables.html">Next Up: Variables</a>
   </div>
   <div class="container">
     <div class="main">
-      <h3>variables</h3>
+      <h4>Open your Debugger:</h4>
+      <p>To open Chrome's debugger, press ⌘ + ⌥ + i</p>
+      <h4>Using the Console:</h4>
+      <p>In the debugger, go to the Console tab. From the Console tab, you can run your own JS. Try it by copy-paste-ing this snippet into the console.</p>
+      <pre class="prettyprint">image.src = 'http://i.giphy.com/4Z3DdOZRTcXPa.gif';</pre>
+      <p>Once you've done that, hit Enter, and this image should change:</p>
+      <p><img id="image" src="http://i.giphy.com/3oD3YGIVrRGbe5YGNa.gif" style="width:200px;"></p>
+      <p>We will be using the console, and the Sources tab to learn</p>
+      <h4>Viewing results in the console</h4>
+      <p>From the Console, you can also see logs from things that are running on the page. For example, click this button:</p>
+      <script>function logThing(){console.log('I logged a thing!');}</script>
+      <button onclick="logThing()">Run</button>
     </div>
+    <div class="clearfix m-t-2"><a class="btn btn-outline-primary pull-xs-right" href="variables.html">Next Up: Variables</a></div>
   </div>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

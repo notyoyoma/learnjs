@@ -1,9 +1,11 @@
--
-    pages = [
-        'start_here'
-    ]
+include _functions/_page_link.pug
+include _mixins/_code_snip.pug
 
 block vars
+
+-
+    if (page && pages.indexOf(page) < pages.length-1)
+        var next_page = pages[pages.indexOf(page)+1]
 
 doctype html
 html(lang='en')
@@ -16,11 +18,13 @@ head
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no')
 
-    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.min.css", rel="stylesheet")
     style.
         body{margin:2em;}
         .main{background: #eef;padding:1em;}
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+        pre.prettyprint {border:0;background:#fff;}
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.umd.js")
 
 body
     .container
@@ -31,6 +35,13 @@ body
                 | LearnJS
         if page
             span= ' / ' + humanize(page)
+        if next_page
+            a.btn.btn-outline-primary.pull-xs-right(href=pageLink(next_page))= "Next Up: " + humanize (next_page)
     .container
         .main
             block body
+        if next_page
+            .clearfix.m-t-2
+                a.btn.btn-outline-primary.pull-xs-right(href=pageLink(next_page))= "Next Up: " + humanize (next_page)
+
+    script(src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js")

@@ -3,4 +3,4 @@ extends _layout.pug
 block body
     ol.list
         each page in pages
-            li: a(href=page + '.html')= humanize(page)
+            li: a(href=pageLink(page))= humanize(page)

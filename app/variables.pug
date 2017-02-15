@@ -1,0 +1,10 @@
+extends _layout.pug
+
+block vars
+    -page='start_here'
+
+block body
+    h3 variables
+    +code_snip("alert(greeting)").
+        var greeting = 'hi';
+
