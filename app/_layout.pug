@@ -24,7 +24,11 @@ head
 
 body
     .container
-        h1(style="display:inline-block;"): a(href='/') LearnJS
+        h1(style="display:inline-block;")
+            if page
+                a(href='../') LearnJS
+            else
+                | LearnJS
         if page
             span= ' / ' + humanize(page)
     .container
