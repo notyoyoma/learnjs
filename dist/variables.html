@@ -17,16 +17,19 @@
 <body>
   <div class="container">
     <h1 style="display:inline-block;"><a href="./">LearnJS</a>
-    </h1><span> / Start here</span><a class="btn btn-outline-primary pull-xs-right" href="variables.html">Next Up: Variables</a>
+    </h1><span> / Variables</span>
   </div>
   <div class="container">
     <div class="main">
       <h3>variables</h3>
+      <p>You can store information in variables. Variables act like buckets, that store information, so you can access them later.</p>
+      <p>For example, here, we store the word "hi" in the variable <em>greeting</em>:</p>
       <pre class="prettyprint">var greeting = 'hi';</pre>
-      <pre class="prettyprint">alert(greeting)</pre>
-      <button onclick="alert(greeting)">Run</button>
+      <script>var greeting = 'hi';
+      </script>
+      <p>Click this button, to see what is in the variable <em>greeting</em></p>
+      <button onclick="console.log(greeting)">console.log(greeting)</button>
     </div>
-    <div class="clearfix m-t-2"><a class="btn btn-outline-primary pull-xs-right" href="variables.html">Next Up: Variables</a></div>
   </div>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

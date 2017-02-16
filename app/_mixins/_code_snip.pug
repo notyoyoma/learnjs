@@ -1,6 +1,14 @@
-mixin code_snip(runner)
+mixin code_run(runner, text='Run')
+    button(onclick=runner)= text
+
+mixin code_snip(also_execute=false)
     pre.prettyprint
         block
-    if runner
-        pre.prettyprint!= runner
-        button(onclick=runner) Run
+    if also_execute
+        script
+            block
+
+mixin code_snip_run(runner)
+    +code_snip(true)
+        block
+    +code_run(runner)
